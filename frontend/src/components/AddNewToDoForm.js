@@ -13,9 +13,7 @@ export default function AddNewToDoForm({onSubmit}){
                 <input onChange={event => setDescription(event.target.value)} type={"text"} value={description}/>
                 <input type={"submit"} value={"submit"}
                        onClick={
-                           ()=> {
-                               console.log('bla');
-                               onSubmit({"description":description, "status": "OPEN"});
+                           ()=> {onSubmit({"description":description, "status": "OPEN"});
                            }}/>
             </StyledToDoForm>
     )
