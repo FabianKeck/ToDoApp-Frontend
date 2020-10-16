@@ -9,10 +9,11 @@ function App() {
     // neues ToDO-Item erstellen
     function addNewToDo(toDo){
         setToDoList([...toDoList,toDo])
-        console.log("hello from addNewToDo");
-        console.log(toDoList);
     }
- //Ausgabe auf dem Screen
+
+
+    //Ausgabe auf dem Screen
+    //onAddToDo kann gelöscht werden?
   return (
     <div>
       <Header onAddToDo = {addNewToDo}></Header>
