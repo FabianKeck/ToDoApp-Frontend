@@ -29,7 +29,7 @@ function App() {
   return (
     <div>
       <Header onAddToDo = {addNewToDo}></Header>
-      <ToDoView/>
+      <ToDoView toDos={toDoList}/>
     </div>
   );
 }
