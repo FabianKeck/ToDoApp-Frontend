@@ -1,6 +1,5 @@
 import React from "react";
 import ToDoItem from "./ToDoItem";
-import ToDoView from "./ToDoView";
 
 export default function InProgress(){
 

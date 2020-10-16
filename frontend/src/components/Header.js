@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from "styled-components/macro"
+import AddNewToDoForm from "./AddNewToDoForm";
 
 
 export default function Header({onAddToDo}) {
@@ -9,7 +9,8 @@ export default function Header({onAddToDo}) {
     return(
         <>
             <h1>Your ToDo App: It's Amazing (soon)</h1>
-            <button>ADD</button>
+            <AddNewToDoForm onSubmit={onAddToDo}></AddNewToDoForm>
+
         </>
     )
 }
