@@ -9,7 +9,8 @@ function App() {
 
     // neues ToDO-Item erstellen
     function addNewToDo(toDo){
-        console.log("ToDo addnewtodo?",toDo)
+        console.log(toDo)
+        console.log(toDoList)
         setToDoList([...toDoList,toDo])
     }
     function getList(){
