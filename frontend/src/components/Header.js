@@ -1,7 +1,6 @@
 import React from 'react';
 import AddNewToDoForm from "./AddNewToDoForm";
 
-
 export default function Header({onAddToDo}) {
 
 

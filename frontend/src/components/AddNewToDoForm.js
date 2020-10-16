@@ -11,7 +11,7 @@ export default function AddNewToDoForm({onSubmit}){
             <StyledToDoForm>
                 <label>Please enter description of your new To-Do:</label><br/>
                 <input onChange={event => setDescription(event.target.value)} type={"text"} value={description}/>
-                <input type={"submit"} value={"submit"}
+                <input type={"button"} value={"addToDo"}
                        onClick={
                            ()=> {onSubmit({"description":description, "status": "OPEN"});
                            }}/>
