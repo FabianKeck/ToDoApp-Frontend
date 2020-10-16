@@ -2,7 +2,7 @@ import React from 'react';
 import ToDoGroup from './ToDoGroup'
 import styled from "styled-components/macro"
 
-export default function ToDoView({toDos, progressToDo}){
+export default function ToDoView({toDos, progressToDo, deleteToDo}){
     const statusList =["OPEN", "IN_PROGRESS", "DONE"]
     //Ausgabe auf dem Screen
     return(
@@ -12,6 +12,7 @@ export default function ToDoView({toDos, progressToDo}){
                                   status={status}
                                   toDos={toDos}
                                   progressTodo={progressToDo}
+                                  deleteToDo={deleteToDo}
                                   /> ;
             })}
         </StyledToDoView>

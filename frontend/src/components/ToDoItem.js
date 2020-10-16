@@ -2,17 +2,20 @@ import React from "react";
 import axios from "axios";
 
 
-export default function ToDoItem({data, progressTodo}){
+export default function ToDoItem({data, progressTodo, deleteToDo}){
     function progressItem(){
         console.log("this should Progress an item");
-        axios.put(deleteString(),data)
+        axios.put(idString(),data)
             .then(response => response.data)
             .then(progressTodo)
     }
-    const deleteString = ()=> "api/todo/"+data.id;
+    const idString = ()=> "api/todo/"+data.id;
 
     function deleteItem(){
-        console.log("this should delete an item")
+        //console.log("this should delete the item", data)
+        axios.delete(idString())
+        deleteToDo(data);
+
     }
     return(
         <>

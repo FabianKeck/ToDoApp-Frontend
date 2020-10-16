@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import ToDoItem from "./ToDoItem";
 import getNeatStatusString from "../utils/getNeatStatusString";
 
-export default function ToDoGroup({status, toDos, progressTodo}){
+export default function ToDoGroup({status, toDos, progressTodo, deleteToDo}){
 
     return(
        <StyledToDoGroup>
@@ -12,6 +12,7 @@ export default function ToDoGroup({status, toDos, progressTodo}){
                .map((toDo, index) => <ToDoItem key={index}
                                                data = {toDo}
                                                progressTodo={progressTodo}
+                                               deleteToDo={deleteToDo}
                                                />)
            }
        </StyledToDoGroup>

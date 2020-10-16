@@ -24,9 +24,12 @@ function App() {
     function progressToDo(toDo){
         console.log("App.js:progressToDo: called on  item: ", toDo )
         setToDoList([...toDoList.filter(item => item.id !==toDo.id),toDo]);
-
-
     }
+    function deleteToDo(toDo) {
+        console.log(toDo.id);
+        setToDoList(toDoList.filter(item => item.id !==toDo.id));
+        console.log("Length of toDoList after delete: ", toDoList.length)
+    };
 
 
     useEffect(()=> {getList()},[])
@@ -36,7 +39,7 @@ function App() {
   return (
     <div>
       <Header onAddToDo = {addNewToDo}></Header>
-      <ToDoView toDos={toDoList} progressToDo={progressToDo}/>
+      <ToDoView toDos={toDoList} progressToDo={progressToDo} deleteToDo={deleteToDo}/>
     </div>
   );
 }
