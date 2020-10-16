@@ -21,6 +21,13 @@ function App() {
             .catch(()=> console.log("Data fetching failed"))
 
     }
+    function progressToDo(toDo){
+        console.log("App.js:progressToDo: called on  item: ", toDo )
+        setToDoList([...toDoList.filter(item => item.id !==toDo.id),toDo]);
+
+
+    }
+
 
     useEffect(()=> {getList()},[])
 
@@ -29,7 +36,7 @@ function App() {
   return (
     <div>
       <Header onAddToDo = {addNewToDo}></Header>
-      <ToDoView toDos={toDoList}/>
+      <ToDoView toDos={toDoList} progressToDo={progressToDo}/>
     </div>
   );
 }
