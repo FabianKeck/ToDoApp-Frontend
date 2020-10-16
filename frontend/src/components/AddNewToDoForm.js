@@ -11,10 +11,12 @@ export default function AddNewToDoForm({onSubmit}){
             <StyledToDoForm>
                 <label>Please enter description of your new To-Do:</label><br/>
                 <input onChange={event => setDescription(event.target.value)} type={"text"} value={description}/>
-                <input type={"submit"} value={"submit"}          ()=> {
+                <input type={"submit"} value={"submit"}
+                       onClick={
+                           ()=> {
                                console.log('bla');
-                               onSubmit("description":description, "status": "OPEN");
-                           } )}/>
+                               onSubmit({"description":description, "status": "OPEN"});
+                           }}/>
             </StyledToDoForm>
     )
 }
