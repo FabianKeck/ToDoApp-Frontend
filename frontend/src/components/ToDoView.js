@@ -1,19 +1,15 @@
 import React from 'react';
-import Open from "./Open";
-import InProgress from "./InProgress";
-import Done from "./Done";
+import ToDoGroup from './ToDoGroup'
 import styled from "styled-components/macro"
 
-export default function ToDoView(){
-
+export default function ToDoView({toDos}){
+    const statusList =["OPEN", "IN_PROGRESS", "DONE"]
     //Ausgabe auf dem Screen
     return(
         <StyledToDoView>
-
-            <Open>OPEN</Open>
-            <InProgress>IN PROGRESS</InProgress>
-            <Done>DONE</Done>
-
+            {statusList.map(status => {
+                return <ToDoGroup key={status} status={status} toDos={toDos}/> ;
+            })}
         </StyledToDoView>
     )
 }
