@@ -6,7 +6,11 @@ export default function AddNewToDoForm({onSubmit}){
     const [description, setDescription] = useState("Enter Description");
 
     function postNewToDo(){
-        axios.post("/api/todo", {"description":description, "status":"OPEN"})
+        console.log("Test Todo??")
+        axios.post("/api/todo", {description:description, status:"OPEN"})
+            .then(response => response.data)
+            .then(onSubmit)
+
     }
 
     return(
