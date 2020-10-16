@@ -4,10 +4,10 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 
 function App() {
-    // brauchen wir zum speichern der ToDo-Liste
+    // brauchen wir zum speichern der To-Do-Liste
     const [toDoList, setToDoList]= useState([]);
 
-    // neues ToDO-Item erstellen
+    // neues To-DO-Item erstellen
     function addNewToDo(toDo){
         console.log(toDo)
         console.log(toDoList)

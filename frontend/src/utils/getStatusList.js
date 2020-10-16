@@ -1,0 +1,1 @@
+export default ()=> ["OPEN", "IN_PROGRESS", "DONE"]
