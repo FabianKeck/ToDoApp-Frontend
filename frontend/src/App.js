@@ -3,17 +3,12 @@ import ToDoView from "./components/ToDoView";
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import styled from "styled-components/macro"
+import useToDoList from "./utils/useToDoList";
 
 function App() {
-    // brauchen wir zum speichern der To-Do-Liste
-    const [toDoList, setToDoList]= useState([]);
+    const [toDoList, setToDoList, addNewToDo, progressToDo, deleteToDo] = useToDoList([]);
 
-    // neues To-DO-Item erstellen
-    function addNewToDo(toDo){
-        console.log(toDo)
-        console.log(toDoList)
-        setToDoList([...toDoList,toDo])
-    }
+
     function getList(){
         axios.get("/api/todo")
             .then(response => response.data)
@@ -22,15 +17,7 @@ function App() {
             .catch(()=> console.log("Data fetching failed"))
 
     }
-    function progressToDo(toDo){
-        console.log("App.js:progressToDo: called on  item: ", toDo )
-        setToDoList([...toDoList.filter(item => item.id !==toDo.id),toDo]);
-    }
-    function deleteToDo(toDo) {
-        console.log(toDo.id);
-        setToDoList(toDoList.filter(item => item.id !==toDo.id));
-        console.log("Length of toDoList after delete: ", toDoList.length)
-    };
+
 
 
     useEffect(()=> {getList()},[])
