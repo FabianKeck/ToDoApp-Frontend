@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import ToDoView from "./components/ToDoView";
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import axios from "axios";
 import styled from "styled-components/macro"
 import useToDoList from "./utils/useToDoList";
