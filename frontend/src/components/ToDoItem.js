@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import styled from "styled-components/macro"
 
 
 export default function ToDoItem({data, progressTodo, deleteToDo}){
@@ -18,10 +19,30 @@ export default function ToDoItem({data, progressTodo, deleteToDo}){
 
     }
     return(
-        <>
-            <h4>{data.description}</h4>
-            <button onClick={deleteItem}>Delete</button>
-            <button onClick={progressItem}>Progress</button>
-        </>
+        <StyledToDoItem>
+            <p>{data.description}</p>
+            <div><button onClick={deleteItem}>Delete</button>
+                <button onClick={progressItem}>Progress</button></div>
+
+        </StyledToDoItem>
     )
 }
+
+const StyledToDoItem = styled.article`
+  border-radius: inherit;
+  margin: .7em;
+  padding: .7em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d69b57;
+  box-shadow: 1px 3px 4px;
+  
+  
+  
+  
+  
+  button{
+    ;
+  }
+`

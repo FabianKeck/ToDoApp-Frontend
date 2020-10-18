@@ -21,7 +21,8 @@ export default function ToDoView({toDos, progressToDo, deleteToDo}){
 }
 
 const StyledToDoView = styled.section`
-    display: grid;
+margin: .5em;
+    display: flex;
     justify-content: space-between;
-    flex-direction: column;   
+    
 `

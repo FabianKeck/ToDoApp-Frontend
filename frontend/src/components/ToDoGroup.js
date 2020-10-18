@@ -7,7 +7,7 @@ export default function ToDoGroup({status, toDos, progressTodo, deleteToDo}){
 
     return(
        <StyledToDoGroup>
-           <h4>{ getNeatStatusString(status) }</h4>
+           <h3>{ getNeatStatusString(status) }</h3>
            {toDos.filter((toDo)=>toDo.status === status )
                .map((toDo, index) => <ToDoItem key={index}
                                                data = {toDo}
@@ -19,5 +19,19 @@ export default function ToDoGroup({status, toDos, progressTodo, deleteToDo}){
     )
 }
 
-const StyledToDoGroup = styled.div` `
+const StyledToDoGroup = styled.div`
+  width: 32%;
+  background-color: #dd5757;
+  border-radius: 3px;
+  align-content: center;
+  height: fit-content;
+  box-shadow: 1px 3px 3px #0008;
+  
+  
+  h3{
+    text-align: center;
+    font-size: 30px;
+    
+  }
+ `
 
